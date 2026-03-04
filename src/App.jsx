@@ -17,7 +17,7 @@ function App() {
       <div>
         <Navbar />
         <Banner />
-        <main className="w-11/12 mx-auto p-t-5 grid md:grid-cols-12 gap-3">
+        <main className="w-11/12 mx-auto p-t-5 grid md:grid-cols-12 gap-10 mt-10">
           <aside className="col-span-9">
             <Suspense fallback="tickets are loading">
               <Tickets ticketData={ticketData} />

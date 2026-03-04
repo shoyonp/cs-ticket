@@ -40,17 +40,19 @@ const Navbar = () => {
               </div>
               <ul
                 tabIndex="-1"
-                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow"
+                className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow font-medium"
               >
                 {links}
               </ul>
             </div>
-            <a className="text-neutral md:text-xl">CS - Ticket System</a>
+            <a className="font-bold md:text-xl">CS - Ticket System</a>
           </div>
 
           <div className="navbar-end">
             <div className="navbar-center hidden lg:flex space-x-2">
-              <ul className=" menu-horizontal px-1 space-x-6 ">{links}</ul>
+              <ul className=" menu-horizontal px-1 space-x-6 font-medium cursor-pointer">
+                {links}
+              </ul>
             </div>
             <a className="btn ml-3 bg-linear-120 from-[#632EE3] to-[#9F62F2] text-white">
               + New Ticket
