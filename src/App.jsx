@@ -4,6 +4,7 @@ import Banner from "./components/Banner";
 import Navbar from "./components/Navbar";
 import Tickets from "./components/Tickets/Tickets";
 import SideTask from "./components/SideTask/SideTask";
+import toast from "react-hot-toast";
 
 // const fetchTickets = async () => {
 //   const res = await fetch("/tickets.json");
@@ -30,6 +31,7 @@ function App() {
     setInProgressCard([...inProgressCard, ticket]);
     setTickets((prevTickets) => prevTickets.filter((t) => t.id !== ticket.id));
     setInProgressCount((prevCount) => prevCount + 1);
+    toast.success("Task moved to In Progress");
   };
 
   // complete task
@@ -38,6 +40,7 @@ function App() {
     setResolvedCount((prevCount) => prevCount + 1);
     setInProgressCard((prevTask) => prevTask.filter((t) => t.title !== title));
     setInProgressCount(inProgressCount - 1);
+    toast.success("Task marked as Resolved");
   };
 
   return (
