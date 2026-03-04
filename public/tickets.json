@@ -1,0 +1,137 @@
+[
+  {
+    "id": 1,
+    "title": "Login page not loading",
+    "description": "Customer reports that the login page shows a blank screen after submitting credentials.",
+    "customer": "John Smith",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-01T09:15:00Z"
+  },
+  {
+    "id": 2,
+    "title": "Payment failed but amount deducted",
+    "description": "User completed checkout but received a payment failed message while the amount was deducted.",
+    "customer": "Ayesha Rahman",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "2026-03-01T11:42:00Z"
+  },
+  {
+    "id": 3,
+    "title": "Unable to reset password",
+    "description": "Password reset link expires immediately after clicking.",
+    "customer": "Michael Brown",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-02T08:20:00Z"
+  },
+  {
+    "id": 4,
+    "title": "Product image not displaying",
+    "description": "Images on the product details page are broken for multiple items.",
+    "customer": "Sara Ahmed",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-03-02T10:05:00Z"
+  },
+  {
+    "id": 5,
+    "title": "Order confirmation email not received",
+    "description": "Customer did not receive confirmation email after successful purchase.",
+    "customer": "David Wilson",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-03-02T14:30:00Z"
+  },
+  {
+    "id": 6,
+    "title": "Website loading slowly",
+    "description": "User experiencing slow loading times on homepage and product pages.",
+    "customer": "Fatima Khan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-03T07:55:00Z"
+  },
+  {
+    "id": 7,
+    "title": "Cart items disappearing",
+    "description": "Items added to cart disappear after refreshing the page.",
+    "customer": "James Taylor",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-03-03T09:18:00Z"
+  },
+  {
+    "id": 8,
+    "title": "Discount code not applying",
+    "description": "Promo code shows invalid even though it is active.",
+    "customer": "Nusrat Jahan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-03T12:44:00Z"
+  },
+  {
+    "id": 9,
+    "title": "Profile update not saving",
+    "description": "Changes made in user profile are not being saved.",
+    "customer": "Robert Garcia",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-03-03T15:10:00Z"
+  },
+  {
+    "id": 10,
+    "title": "Search functionality not returning results",
+    "description": "Search bar returns empty results even for existing products.",
+    "customer": "Priya Sharma",
+    "priority": "High",
+    "status": "Open",
+    "createdAt": "2026-03-04T06:35:00Z"
+  },
+  {
+    "id": 11,
+    "title": "Error 500 on checkout",
+    "description": "Internal server error appears when attempting to complete purchase.",
+    "customer": "Daniel Lee",
+    "priority": "Critical",
+    "status": "In Progress",
+    "createdAt": "2026-03-04T08:12:00Z"
+  },
+  {
+    "id": 12,
+    "title": "Mobile menu not working",
+    "description": "Hamburger menu does not expand on mobile devices.",
+    "customer": "Mehedi Hasan",
+    "priority": "Medium",
+    "status": "Open",
+    "createdAt": "2026-03-04T09:40:00Z"
+  },
+  {
+    "id": 13,
+    "title": "Invoice download issue",
+    "description": "PDF invoice fails to download after clicking the download button.",
+    "customer": "Olivia Martinez",
+    "priority": "Low",
+    "status": "Resolved",
+    "createdAt": "2026-03-04T10:25:00Z"
+  },
+  {
+    "id": 14,
+    "title": "Account locked after multiple attempts",
+    "description": "Customer account locked after entering wrong password several times.",
+    "customer": "Tanvir Hossain",
+    "priority": "High",
+    "status": "In Progress",
+    "createdAt": "2026-03-04T11:05:00Z"
+  },
+  {
+    "id": 15,
+    "title": "Notification settings not updating",
+    "description": "User unable to change email notification preferences.",
+    "customer": "Emily Clark",
+    "priority": "Low",
+    "status": "Open",
+    "createdAt": "2026-03-04T12:15:00Z"
+  }
+]
