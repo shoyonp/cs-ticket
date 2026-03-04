@@ -35,13 +35,13 @@ function App() {
       <div>
         <Navbar />
         <Banner inProgressCount={inProgressCount} />
-        <main className="w-11/12 mx-auto p-t-5 grid md:grid-cols-12 gap-10 mt-10">
+        <main className="w-11/12 mx-auto p-t-5 grid grid-cols-2 md:grid-cols-12 md:gap-5 lg:gap-10 mt-10">
           <aside className="col-span-9">
             <Suspense fallback="tickets are loading">
               <Tickets tickets={tickets} removeTicket={removeTicket} />
             </Suspense>
           </aside>
-          <aside className="col-span-3">
+          <aside className="col-span-3 mt-10 md:mt-0">
             <SideTask inProgressCard={inProgressCard} />
           </aside>
         </main>
