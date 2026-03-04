@@ -52,7 +52,7 @@ const Navbar = () => {
             <div className="navbar-center hidden lg:flex space-x-2">
               <ul className=" menu-horizontal px-1 space-x-6 ">{links}</ul>
             </div>
-            <a className="btn ml-3 bg-linear-to-r from-[#632EE3] to-[#9F62F2] text-white">
+            <a className="btn ml-3 bg-linear-120 from-[#632EE3] to-[#9F62F2] text-white">
               + New Ticket
             </a>
           </div>
