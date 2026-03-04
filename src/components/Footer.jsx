@@ -1,5 +1,3 @@
-import React from "react";
-
 const Footer = () => {
   return (
     <>
@@ -8,7 +6,11 @@ const Footer = () => {
           <nav>
             <h6 className="footer-title">CS — Ticket System</h6>
             <p className="w-60">
-              CS Ticket System is a modern and intuitive task management platform designed to streamline workflow and improve productivity. It helps teams efficiently track, manage, and resolve tickets with a smooth and organized experience, ensuring better collaboration and faster task completion.
+              CS Ticket System is a modern and intuitive task management
+              platform designed to streamline workflow and improve productivity.
+              It helps teams efficiently track, manage, and resolve tickets with
+              a smooth and organized experience, ensuring better collaboration
+              and faster task completion.
             </p>
           </nav>
           <nav>
@@ -33,11 +35,12 @@ const Footer = () => {
           </nav>
           <nav>
             <h6 className="footer-title">Social Links</h6>
-            <a className="link link-hover">@CS — Ticket System</a>
-            <a className="link link-hover">@CS — Ticket System</a>
-            <a className="link link-hover">@CS — Ticket System</a>
-            <a className="link link-hover">support@cst.com</a>
-            
+            <a className="link link-hover flex item-center">
+              @CS — Ticket System
+            </a>
+            <a className="link link-hover ">@CS — Ticket System</a>
+            <a className="link link-hover ">@CS — Ticket System</a>
+            <a className="link link-hover "> support@cst.com</a>
           </nav>
         </div>
 
