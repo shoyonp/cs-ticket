@@ -1,11 +1,21 @@
 import React from "react";
 
-const TicketCard = ({ ticket }) => {
+const TicketCard = ({ ticket, removeTicket }) => {
   const { id, title, description, customer, priority, status, createdAt } =
     ticket;
-//   console.log(ticket);
+
+  const handleClick = (ticket) => {
+    removeTicket(ticket);
+  };
+  //   console.log(ticket);
   return (
-    <div className="bg-white rounded-md p-5 shadow-sm hover:shadow-md transition duration-300 cursor-pointer">
+    <div
+      onClick={() => {
+        handleClick(ticket);
+      }}
+      className="bg-white rounded-md p-5 shadow-sm hover:shadow-md transition duration-300 cursor-pointer"
+    >
+      {/* top */}
       <div className="flex justify-between items-start mb-4">
         <h2 className="text-lg font-semibold text-gray-800">{title}</h2>
         <span
@@ -21,7 +31,9 @@ const TicketCard = ({ ticket }) => {
           {status}
         </span>
       </div>
+      {/* middle */}
       <p className="text-sm text-gray-500 mb-5">{description}</p>
+      {/* bottom */}
       <div className="flex justify-between items-center text-sm text-gray-600">
         <div className="flex items-center gap-3">
           <span className="font-medium text-gray-700">#{id}</span>

@@ -1,6 +1,7 @@
 import React from "react";
 
-const SideTask = () => {
+const SideTask = ({inProgressCard}) => {
+    // console.log(inProgressCard);
   return (
     <div>
       <div>
