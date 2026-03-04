@@ -5,6 +5,7 @@ import Navbar from "./components/Navbar";
 import Tickets from "./components/Tickets/Tickets";
 import SideTask from "./components/SideTask/SideTask";
 import toast from "react-hot-toast";
+import Footer from "./components/Footer";
 
 // const fetchTickets = async () => {
 //   const res = await fetch("/tickets.json");
@@ -14,6 +15,7 @@ import toast from "react-hot-toast";
 
 function App() {
   const [tickets, setTickets] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [inProgressCount, setInProgressCount] = useState(0);
   const [inProgressCard, setInProgressCard] = useState([]);
   const [resolvedTask, setResolvedTask] = useState([]);
@@ -23,7 +25,10 @@ function App() {
   useEffect(() => {
     fetch("/tickets.json")
       .then((res) => res.json())
-      .then((data) => setTickets(data));
+      .then((data) => {
+        setTickets(data);
+        setLoading(false);
+      });
   }, []);
 
   // remove tickets
@@ -39,7 +44,7 @@ function App() {
     setResolvedTask([...resolvedTask, title]);
     setResolvedCount((prevCount) => prevCount + 1);
     setInProgressCard((prevTask) => prevTask.filter((t) => t.title !== title));
-    setInProgressCount(inProgressCount - 1);
+    setInProgressCount((prevCount) => prevCount - 1);
     toast.success("Task marked as Resolved");
   };
 
@@ -51,12 +56,20 @@ function App() {
           inProgressCount={inProgressCount}
           resolvedCount={resolvedCount}
         />
-        <main className="w-11/12 mx-auto p-t-5 grid grid-cols-2 md:grid-cols-12 md:gap-5 lg:gap-10 mt-10">
+        <main className="w-11/12 mx-auto p-t-5 grid grid-cols-2 md:grid-cols-12 md:gap-5 lg:gap-10 mt-10 mb-10 min-h-[calc(100vh-90px)]">
           <aside className="col-span-9">
-            <Suspense fallback="tickets are loading">
+            {loading ? (
+              <div className="flex justify-center items-center h-40">
+                <span className="loading loading-spinner loading-lg"></span>
+              </div>
+            ) : (
               <Tickets tickets={tickets} removeTicket={removeTicket} />
-            </Suspense>
+            )}
+            {/* <Suspense fallback="tickets are loading">
+              <Tickets tickets={tickets} removeTicket={removeTicket} />
+            </Suspense> */}
           </aside>
+
           <aside className="col-span-3 mt-10 md:mt-0">
             <SideTask
               inProgressCard={inProgressCard}
@@ -65,6 +78,7 @@ function App() {
             />
           </aside>
         </main>
+        <Footer />
       </div>
     </>
   );
