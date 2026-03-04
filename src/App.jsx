@@ -15,6 +15,8 @@ function App() {
   const [tickets, setTickets] = useState([]);
   const [inProgressCount, setInProgressCount] = useState(0);
   const [inProgressCard, setInProgressCard] = useState([]);
+  const [resolvedTask, setResolvedTask] = useState([]);
+  const [resolvedCount, setResolvedCount] = useState(0);
 
   // load the tickets
   useEffect(() => {
@@ -30,11 +32,22 @@ function App() {
     setInProgressCount((prevCount) => prevCount + 1);
   };
 
+  // complete task
+  const completeTask = (title) => {
+    setResolvedTask([...resolvedTask, title]);
+    setResolvedCount((prevCount) => prevCount + 1);
+    setInProgressCard((prevTask) => prevTask.filter((t) => t.title !== title));
+    setInProgressCount(inProgressCount - 1);
+  };
+
   return (
     <>
       <div>
         <Navbar />
-        <Banner inProgressCount={inProgressCount} />
+        <Banner
+          inProgressCount={inProgressCount}
+          resolvedCount={resolvedCount}
+        />
         <main className="w-11/12 mx-auto p-t-5 grid grid-cols-2 md:grid-cols-12 md:gap-5 lg:gap-10 mt-10">
           <aside className="col-span-9">
             <Suspense fallback="tickets are loading">
@@ -42,7 +55,11 @@ function App() {
             </Suspense>
           </aside>
           <aside className="col-span-3 mt-10 md:mt-0">
-            <SideTask inProgressCard={inProgressCard} />
+            <SideTask
+              inProgressCard={inProgressCard}
+              resolvedTask={resolvedTask}
+              completeTask={completeTask}
+            />
           </aside>
         </main>
       </div>

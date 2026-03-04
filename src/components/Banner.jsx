@@ -1,6 +1,6 @@
 import React from "react";
 // import vector from "../assets/vector1.png";
-const Banner = ({inProgressCount}) => {
+const Banner = ({inProgressCount,resolvedCount}) => {
   return (
     <div className="w-11/12 mx-auto grid grid-cols-1 md:grid-cols-2 justify-between gap-8 mt-16">
       <div
@@ -15,7 +15,7 @@ const Banner = ({inProgressCount}) => {
       bg-linear-120 from-[#54CF68] to-[#00827A]"
       >
         <p className="font-light text-lg text-white mb-3">Resolved</p>
-        <h1 className="font-semibold text-4xl text-white">0</h1>
+        <h1 className="font-semibold text-4xl text-white">{resolvedCount}</h1>
       </div>
     </div>
   );

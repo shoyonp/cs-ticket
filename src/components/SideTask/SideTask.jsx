@@ -1,7 +1,7 @@
 import React from "react";
 import TaskStatusCard from "./TaskStatusCard";
 
-const SideTask = ({ inProgressCard }) => {
+const SideTask = ({ inProgressCard, completeTask, resolvedTask }) => {
   return (
     <div>
       <div>
@@ -12,7 +12,11 @@ const SideTask = ({ inProgressCard }) => {
         {inProgressCard.length ? (
           <div className="grid grid-cols-1 gap-5">
             {inProgressCard?.map((ipc) => (
-              <TaskStatusCard key={ipc.id} ipc={ipc} />
+              <TaskStatusCard
+                key={ipc.id}
+                ipc={ipc}
+                completeTask={completeTask}
+              />
             ))}
           </div>
         ) : (
@@ -25,7 +29,20 @@ const SideTask = ({ inProgressCard }) => {
         <h4 className="font-semibold text-[#34485A] text-xl mb-3">
           Resolved Task
         </h4>
-        <p className="text-sm text-gray-400">No resolved tasks yet.</p>
+        {resolvedTask.length ? (
+          <div className="space-y-3">
+            {resolvedTask.map((t, idx) => (
+              <h3
+                className="bg-[#E0E7FF] text-[#001931] font-medium p-4 rounded-md"
+                key={idx}
+              >
+                {t}
+              </h3>
+            ))}
+          </div>
+        ) : (
+          <p className="text-sm text-gray-400">No resolved tasks yet.</p>
+         )}
       </div>
     </div>
   );
